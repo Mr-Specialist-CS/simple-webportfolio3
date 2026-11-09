@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="{{ '/' | relative_url }}" class="logo">Portfolio</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+        <li><a href="{{ '/about/' | relative_url }}" class="nav-link">About</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}" class="nav-link">Projects</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+      });
+      
+      // Close menu when clicking on a link
+      const navLinks = navMenu.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+        });
+      });
+    }
+  });
+</script>
+

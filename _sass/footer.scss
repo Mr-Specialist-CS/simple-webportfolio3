@@ -1,0 +1,133 @@
+@import 'variables';
+
+.footer {
+  background-color: $bg-secondary;
+  padding: $spacing-lg 0 $spacing-sm;
+  margin-top: $spacing-xl;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-section {
+  h3 {
+    color: $accent-orange;
+    margin-bottom: $spacing-sm;
+    font-size: 1.25rem;
+  }
+  
+  ul {
+    list-style: none;
+    
+    li {
+      margin-bottom: $spacing-xs;
+      
+      a {
+        color: $text-secondary;
+        
+        &:hover {
+          color: $accent-green;
+        }
+      }
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  color: $text-secondary;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba($accent-orange, 0.2);
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    z-index: -1;
+  }
+  
+  &:hover {
+    color: $accent-orange;
+    transform: translateY(-5px) scale(1.2) rotate(5deg);
+    
+    &::before {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  &:nth-child(2):hover {
+    color: $accent-green;
+    
+    &::before {
+      background: rgba($accent-green, 0.2);
+    }
+  }
+}
+
+.repo-link {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  background-color: $bg-tertiary;
+  border-radius: 6px;
+  color: $accent-green;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba($accent-green, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:hover {
+    background-color: $accent-green;
+    color: $text-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba($accent-green, 0.4);
+    
+    &::before {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: $spacing-md;
+  border-top: 1px solid $bg-tertiary;
+  color: $text-secondary;
+  font-size: 0.9rem;
+}
+

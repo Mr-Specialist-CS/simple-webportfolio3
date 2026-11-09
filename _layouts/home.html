@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">{{ site.name | default: "Your Name" }}</h1>
+        <p class="hero-title">{{ site.title_text | default: "A Creative Developer" }}</p>
+        <p class="hero-description">{{ site.description | default: "I'm a creative developer based in your location, and I'm very passionate and dedicated to my work." }}</p>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Read More</a>
+        <div class="hero-social">
+          <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.codecademy.com/profiles/{{ site.codecademy_username }}" target="_blank" rel="noopener noreferrer" aria-label="Codecademy">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.827 19.729h-5.595c-.094 0-.17.058-.17.172v1.723c0 .094.058.17.172.17h5.595c.094 0 .172-.044.172-.17v-1.723c0-.105-.058-.172-.152-.172zm-5.93 0h-2.103c-.094 0-.17.058-.17.172v1.723c0 .094.058.17.172.17h2.103c.093 0 .172-.044.172-.17v-1.723c0-.105-.059-.172-.152-.172zm-2.276 0H9.862c-.094 0-.17.058-.17.172v1.723c0 .094.058.17.172.17h5.595c.093 0 .172-.044.172-.17v-1.723c0-.105-.058-.172-.152-.172zM23.99 0c.11 0 .198.082.198.198v23.604c0 .116-.088.198-.198.198H12.594c-.11 0-.198-.082-.198-.198V.198c0-.116.088-.198.198-.198h11.396zM8.427 8.803c0-1.29.996-2.333 2.224-2.333 1.228 0 2.224 1.043 2.224 2.333 0 1.29-.996 2.333-2.224 2.333-1.228 0-2.224-1.043-2.224-2.333zm11.77 9.301c0 .429-.353.776-.79.776H5.563c-.436 0-.79-.347-.79-.776v-5.58h15.424v5.58zm-2.808-10.567c.044.282.044.564.044.847 0 2.632-2.005 5.664-5.672 5.664-1.08 0-2.09-.31-2.934-.844.15.017.3.034.466.034.906 0 1.74-.31 2.405-.844a1.994 1.994 0 01-1.873-1.38c.282.043.564.06.847.06.405 0 .81-.06 1.183-.152a1.994 1.994 0 01-1.604-1.953c.282.198.59.31.944.31-.59-.39-1.006-1.043-1.006-1.79a1.994 1.994 0 01.27-1.006c1.006 1.26 2.512 2.09 4.205 2.175a1.994 1.994 0 01-.044-.456c0-1.08.877-1.953 1.953-1.953.564 0 1.074.243 1.43.63a3.94 3.94 0 001.26-.483 1.994 1.994 0 01-.877 1.096c.405-.043.79-.152 1.14-.31-.27.405-.59.776-.96 1.096z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="profile-image-wrapper">
+          <img src="{{ site.profile_image | default: 'assets/images/profile.jpg' | relative_url }}" alt="Profile Photo" class="profile-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h3>Pixel Perfect</h3>
+        <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>High Quality</h3>
+        <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3>Awesome Idea</h3>
+        <p>Most common methods for designing websites that work well on desktop is responsive and adaptive design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ content }}
+
